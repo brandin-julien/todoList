@@ -34,7 +34,7 @@
 
     <h3>Liste des tâches</h3>
 
-    <p>Il reste <strong> 1 tâche </strong> sur <strong>2</strong> à effectuer.</p>
+    <p>Il reste <strong> {{ remainingComputed }} {{ 'tâche' | pluralize(remainingComputed) }} </strong> sur <strong>{{tasks.length}}</strong> à effectuer.</p>
 
     <ul class="collection">
 
