@@ -38,19 +38,13 @@
 
     <ul class="collection">
 
-        <li class="collection-item">
-            <input type="checkbox" id="t_1">
-            <label for="t_1">Tâche n°1</label>
-            <a href="#" class="link-delete" title="Supprimer cette tâche">
-                <i class="small material-icons">delete_forever</i>
-            </a>
-        </li>
+        <li class="collection-item" v-for="(task, index) in tasks">
 
-        <li class="collection-item">
-            <input type="checkbox" id="t_2">
-            <label for="t_2">Tâche n°2</label>
+            <input type="checkbox" :id="'t_' + index" v-model="task.isDone">
+
+            <label :for="'t_' + index">{{ task.title }}</label>
             <a href="#" class="link-delete" title="Supprimer cette tâche">
-                <i class="small material-icons">delete_forever</i>
+                <i class="small material-icons" v-on:click="deleteTask(index)">delete_forever</i>
             </a>
         </li>
 
